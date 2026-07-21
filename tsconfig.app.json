@@ -6,7 +6,9 @@
     "module": "esnext",
     "types": ["vite/client"],
     "paths": {
-      "@pages/*": ["./src/pages/*"]
+      "@pages/*": ["./src/pages/*"],
+      "@components/*": ["./src/components/*"],
+      "@features/*": ["./src/features/*"],
     },
     "allowArbitraryExtensions": true,
     "skipLibCheck": true,

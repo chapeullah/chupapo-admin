@@ -1,7 +1,11 @@
-export default function AuthPage() {
-    return (
-        <div className="auth-page">
+import "./auth-page.css";
 
-        </div>
-    );
+import SignInForm from "@features/sign-in-form";
+
+export default function AuthPage() {
+  return (
+    <div className="auth-page">
+      <SignInForm />
+    </div>
+  );
 }
