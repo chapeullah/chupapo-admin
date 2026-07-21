@@ -1,5 +1,4 @@
-import "./styles/reset.css";
-import "./styles/global.css";
+import "./styles/index.css";
 
 import { CustomRoutes } from "ra-core";
 import { Route } from "react-router";
