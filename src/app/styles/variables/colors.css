@@ -1,4 +1,17 @@
 :root {
   --color-bg: #f2f2f2;
   --color-bg-surface: #fafafa;
+  --color-ghost-button: #fafafa80;
+  --color-ghost-button-hover: #ffffffb3;
+
+  --color-text-primary: black;
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #121212;
+  --color-bg-surface: #1c1c1c;
+  --color-ghost-button: #ffffff0d;
+  --color-ghost-button-hover: #ffffff1a;
+
+  --color-text-primary: white;
 }

@@ -5,6 +5,7 @@ import {
   useState,
   type SubmitEvent as ReactSubmitEvent
 } from "react";
+
 import { validateUsername } from "./validate-username.ts";
 import { validatePassword } from "./validate-password.ts";
 
@@ -48,8 +49,12 @@ export default function SignInForm() {
   }
 
   return (
-    <form className="sign-in-form" onSubmit={handleLogin} noValidate={true}>
-      <h1 className="sign-in-form__title">Sign in</h1>
+    <form
+      className="sign-in-form"
+      onSubmit={handleLogin}
+      noValidate={true}
+    >
+      <h1 className="sign-in-form__title">Chupapo Admin</h1>
 
       <input
         className="sign-in-form__input"
@@ -68,11 +73,17 @@ export default function SignInForm() {
         autoComplete="current-password"
       />
 
-      {error && <p>{error}</p>}
-
-      <button type="submit" disabled={pending}>
-        {pending ? "Signing in..." : "Sign in"}
+      <button
+        className="sign-in-form__submit"
+        type="submit"
+        disabled={pending}
+      >
+        {pending ? "Signing in..." : "Sign in "}
       </button>
+
+      {error &&
+        <p className="sign-in-form__error">{error}</p>
+      }
     </form>
   );
 };

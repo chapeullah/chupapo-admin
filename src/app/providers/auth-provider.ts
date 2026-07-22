@@ -1,5 +1,5 @@
 import { type AuthProvider, HttpError } from "ra-core";
-import { apiFetch, csrfFetch } from "../lib/http-client";
+import { apiFetch, csrfFetch } from "../../shared/api/http-client.ts";
 
 export const authProvider: AuthProvider = {
   async login({ username, password }) {
