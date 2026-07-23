@@ -1,7 +1,6 @@
 import "./sidebar.css";
 
 import {
-  LayoutDashboard,
   LogOut,
 } from "lucide-react";
 import { useLogout } from "ra-core";
@@ -17,28 +16,14 @@ export default function Sidebar() {
   return (
     <aside className="sidebar">
       <NavLink className="sidebar__brand" to="/" aria-label="Chupapo Admin">
-        <ChupapoLogo className="sidebar__brand-logo" />
-        <span className="sidebar__brand-name">
-          Chupapo
-          <small>Admin</small>
-        </span>
+        <div className="sidebar__logo-container">
+          <ChupapoLogo className="sidebar__brand-logo" />
+          <span className="sidebar__brand-name">Chupapo</span>
+        </div>
       </NavLink>
 
       <nav className="sidebar__navigation">
         <ul className="sidebar__list">
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                `sidebar__item${isActive ? " sidebar__item--active" : ""}`
-              }
-              to="/"
-              aria-label="Обзор"
-            >
-              <LayoutDashboard aria-hidden="true" strokeWidth={1.8} />
-              <span className="sidebar__item-label">Обзор</span>
-            </NavLink>
-          </li>
-
           {sidebarNavigation.map(({ label, icon: Icon, path }) => (
             <li key={label}>
               <NavLink
@@ -59,8 +44,7 @@ export default function Sidebar() {
         <div className="sidebar__profile" aria-label="Профиль администратора">
           <div className="sidebar__avatar" aria-hidden="true">AD</div>
           <div className="sidebar__profile-copy">
-            <strong>Администратор</strong>
-            <span>Профиль</span>
+            <strong>ADMIN</strong>
           </div>
         </div>
 

@@ -1,7 +1,7 @@
 export default function ChupapoLogo({ className = "" }) {
   return (
     <svg
-      className={`logo chupapo-logo ${className}`}
+      className={`chupapo-logo ${className}`}
       viewBox="0 0 1024 1024"
       xmlns="http://www.w3.org/2000/svg"
       aria-label="ChupapoLogo"

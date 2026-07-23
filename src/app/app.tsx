@@ -8,6 +8,7 @@ import { Route } from "react-router-dom";
 
 import AccountsPage from "@pages/accounts";
 import AuthPage from "@pages/auth";
+import CustomersPage from "@pages/customers";
 import OverviewPage from "@pages/overview";
 import RolesPage from "@pages/roles";
 
@@ -30,6 +31,10 @@ export default function App() {
         <Route
           path="/accounts"
           element={<AccountsPage />}
+        />
+        <Route
+          path="/customers"
+          element={<CustomersPage />}
         />
         <Route
           path="/roles"

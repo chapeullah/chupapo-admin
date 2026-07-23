@@ -8,10 +8,13 @@
 }
 
 :root[data-theme="dark"] {
-  --color-bg: #121212;
+  --color-bg-light: #202121;
+  --color-bg: #1c1c1c;
   --color-bg-surface: #1c1c1c;
   --color-ghost-button: #ffffff0d;
   --color-ghost-button-hover: #ffffff1a;
 
   --color-text-primary: white;
+
+  --color-accent: #b5eafb;
 }

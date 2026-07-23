@@ -1,7 +1,8 @@
 import {
   ShieldCheck,
+  UserRound,
   UsersRound,
-  type LucideIcon,
+  type LucideIcon, LayoutDashboard,
 } from "lucide-react";
 
 type SidebarNavigationItem = {
@@ -11,6 +12,8 @@ type SidebarNavigationItem = {
 };
 
 export const sidebarNavigation: SidebarNavigationItem[] = [
+  { label: "Overview", icon: LayoutDashboard, path: "/overview" },
   { label: "Accounts", icon: UsersRound, path: "/accounts" },
+  { label: "Customers", icon: UserRound, path: "/customers" },
   { label: "Roles", icon: ShieldCheck, path: "/roles" },
 ];
