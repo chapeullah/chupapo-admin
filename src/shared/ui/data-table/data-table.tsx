@@ -1,5 +1,7 @@
 import type { Key, ReactNode } from "react";
 
+import "./data-table.css";
+
 export type DataTableColumn<T> = {
   key: string;
   header: ReactNode;
@@ -16,57 +18,59 @@ type DataTableProps<T> = {
 };
 
 export default function DataTable<T>({
-                                       columns,
-                                       data,
-                                       getRowKey,
-                                       className = "",
-                                       emptyMessage = "No data",
-                                     }: DataTableProps<T>) {
+  columns,
+  data,
+  getRowKey,
+  className = "",
+  emptyMessage = "No data",
+}: DataTableProps<T>) {
   const tableClassName = ["data-table", className]
     .filter(Boolean)
     .join(" ");
 
   return (
-    <table className={tableClassName}>
-      <thead>
-      <tr>
-        {columns.map((column) => (
-          <th
-            key={column.key}
-            scope="col"
-            className={column.className}
-          >
-            {column.header}
-          </th>
-        ))}
-      </tr>
-      </thead>
-
-      <tbody>
-      {data.length > 0 ? (
-        data.map((item) => (
-          <tr key={getRowKey(item)}>
+    <div className="data-table__container">
+      <table className={tableClassName}>
+        <thead>
+          <tr>
             {columns.map((column) => (
-              <td
+              <th
                 key={column.key}
+                scope="col"
                 className={column.className}
               >
-                {column.render(item)}
-              </td>
+                {column.header}
+              </th>
             ))}
           </tr>
-        ))
-      ) : (
-        <tr>
-          <td
-            className="data-table__empty"
-            colSpan={columns.length}
-          >
-            {emptyMessage}
-          </td>
-        </tr>
-      )}
-      </tbody>
-    </table>
+        </thead>
+
+        <tbody>
+          {data.length > 0 ? (
+            data.map((item) => (
+              <tr key={getRowKey(item)}>
+                {columns.map((column) => (
+                  <td
+                    key={column.key}
+                    className={column.className}
+                  >
+                    {column.render(item)}
+                  </td>
+                ))}
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td
+                className="data-table__empty"
+                colSpan={columns.length}
+              >
+                {emptyMessage}
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+    </div>
   );
 }

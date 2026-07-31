@@ -11,10 +11,9 @@
   height: 100dvh;
   box-sizing: border-box;
   padding: 8px;
-  overflow-y: auto;
+  overflow-y: hidden;
 
   background-color: var(--color-bg-light);
-  box-shadow: 8px 0 24px rgb(15 23 42 / 8%);
 }
 
 .sidebar__brand {

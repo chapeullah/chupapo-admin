@@ -1,0 +1,97 @@
+.data-table__container {
+  --data-table-surface: #ffffff;
+  --data-table-header: #f7f8fb;
+  --data-table-border: #e5e8ef;
+  --data-table-text: #303747;
+  --data-table-muted: #71798c;
+  --data-table-hover: #f8faff;
+
+  width: 100%;
+  min-width: 0;
+
+  overflow-x: auto;
+  border: 1px solid var(--data-table-border);
+  border-radius: 4px;
+
+  background-color: var(--data-table-surface);
+}
+
+.data-table {
+  width: 100%;
+  min-width: 720px;
+
+  border-collapse: collapse;
+
+  color: var(--data-table-text);
+
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.data-table th,
+.data-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--data-table-border);
+
+  text-align: left;
+  vertical-align: middle;
+}
+
+.data-table th {
+  background-color: var(--data-table-header);
+  color: var(--data-table-muted);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.data-table td {
+  transition: background-color 150ms ease;
+}
+
+.data-table tbody tr:hover td {
+  background-color: var(--data-table-hover);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.data-table__empty {
+  height: 160px;
+
+  color: var(--data-table-muted);
+
+  text-align: center !important;
+}
+
+:root[data-theme="dark"] .data-table__container {
+  --data-table-surface: #1c1c1c;
+  --data-table-header: #222328;
+  --data-table-border: #30333a;
+  --data-table-text: #d7dae2;
+  --data-table-muted: #9da4b3;
+  --data-table-hover: #24262c;
+}
+
+@media (max-width: 720px) {
+  .data-table {
+    min-width: 640px;
+
+    font-size: 12px;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 12px 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .data-table td {
+    transition: none;
+  }
+}

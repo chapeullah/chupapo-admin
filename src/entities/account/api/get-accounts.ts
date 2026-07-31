@@ -1,4 +1,4 @@
-import { apiFetch } from "../../../shared/api/http-client.ts";
+import { apiFetch } from "@api/http-client.ts";
 
 import type { AccountsPage } from "../model/types.ts";
 
@@ -10,7 +10,7 @@ type GetAccountsParams = {
 
 export default async function getAccounts({
                                             page = 0,
-                                            size = 10,
+                                            size = 25,
                                             sort = "id,asc",
                                           }: GetAccountsParams = {}): Promise<AccountsPage> {
   const searchParams = new URLSearchParams({

@@ -3,6 +3,8 @@ export type Account = {
   username: string;
   roleName: string;
   enabled: boolean;
+  createdAt: string;
+  updatedAt: string;
 };
 
 export type AccountsPage = {

@@ -14,6 +14,7 @@
       "@icons/*": ["./src/shared/icons/*"],
       "@ui/*": ["./src/shared/ui/*"],
       "@api/*": ["./src/shared/api/*"],
+      "@entities/*": ["./src/entities/*"]
     },
     "allowArbitraryExtensions": true,
     "skipLibCheck": true,

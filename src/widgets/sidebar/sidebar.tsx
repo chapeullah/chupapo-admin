@@ -15,7 +15,7 @@ export default function Sidebar() {
 
   return (
     <aside className="sidebar">
-      <NavLink className="sidebar__brand" to="/" aria-label="Chupapo Admin">
+      <NavLink className="sidebar__brand" to="/overview" aria-label="Chupapo Admin">
         <div className="sidebar__logo-container">
           <ChupapoLogo className="sidebar__brand-logo" />
           <span className="sidebar__brand-name">Chupapo</span>

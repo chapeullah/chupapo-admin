@@ -4,11 +4,16 @@ import { useQuery } from "@tanstack/react-query";
 import { Columns3, Download, Plus } from "lucide-react";
 
 import getAccounts from "../../entities/account/api/get-accounts.ts";
-import type { Account } from "../../entities/account/model/types.ts";
+import type { Account } from "@entities/account/model/types.ts";
 
 import DataTable, {
   type DataTableColumn,
 } from "@ui/data-table";
+
+const dateFormatter = new Intl.DateTimeFormat("ru-RU", {
+  dateStyle: "medium",
+  timeStyle: "medium",
+});
 
 const columns: DataTableColumn<Account>[] = [
   {
@@ -31,6 +36,18 @@ const columns: DataTableColumn<Account>[] = [
     header: "Status",
     render: (account) =>
       account.enabled ? "Enabled" : "Disabled",
+  },
+  {
+    key: "createdAt",
+    header: "Created",
+    render: (account) =>
+      dateFormatter.format(new Date(account.createdAt)),
+  },
+  {
+    key: "updatedAt",
+    header: "Updated",
+    render: (account) =>
+      dateFormatter.format(new Date(account.updatedAt)),
   },
 ];
 

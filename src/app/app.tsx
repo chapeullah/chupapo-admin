@@ -4,7 +4,7 @@ import {
   CoreAdmin,
   CustomRoutes,
 } from "ra-core";
-import { Route } from "react-router-dom";
+import { Navigate, Route } from "react-router-dom";
 
 import AccountsPage from "@pages/accounts";
 import AuthPage from "@pages/auth";
@@ -26,6 +26,10 @@ export default function App() {
       <CustomRoutes>
         <Route
           path="/"
+          element={<Navigate to="/overview" replace />}
+        />
+        <Route
+          path="/overview"
           element={<OverviewPage />}
         />
         <Route
